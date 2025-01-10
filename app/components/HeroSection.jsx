@@ -3,9 +3,13 @@ import { BackgroundBeamsWithCollision } from './ui/BackgroundBeans'
 import { Icons } from '@/data/data'
 import { Button } from './ui/MovingBorder'
 import { ArrowBigDown } from 'lucide-react'
-import { FlipWords } from './ui/FlipWords'
+import { FloatingDock } from './ui/FloatingDock'
 
 const HeroSection = () => {
+
+  let aux = [
+    {title:"pep", icon:"", href:"#"},
+  ] 
   return (
     <section className='h-screen w-screen' id='hero'>
         <BackgroundBeamsWithCollision className={"flex flex-col pt-10"}>
@@ -16,6 +20,7 @@ const HeroSection = () => {
 
             <h1 className='text-5xl md:text-7xl text-center font-bold mt-20'>Desenvolvedor <span className='text-transparent bg-clip-text bg-gradient-to-br from-purple-600 to-pink-600 '>Web</span> <span className='text-transparent bg-clip-text bg-gradient-to-bl from-purple-600 to-pink-600 relative'>FrontEnd</span>.
             </h1>
+            
             <div className='px-8 mt-6 md:w-[70vw]'>
                 <p className='text-zinc-300 leading-4 font-medium text-center text-lg md:text-xl md:leading-6'>Bem-Vindo ao meu portifólio, meu nome é Arthur Desenvolvedor Web FrontEnd, e aqui você vai conhecer mais sobre mim e o meu trabalho.</p>
             </div>
@@ -29,20 +34,17 @@ const HeroSection = () => {
                 ))}
               </Button>
             </div>
+            
             <div className='flex flex-col justify-center items-center mt-8 gap-2'>
               <p>Saiba Mais</p>
               <a href="#about">
                 <ArrowBigDown className='animate-bounce'></ArrowBigDown>
               </a>
+            </div>     
+            
+            <div>
+                <FloatingDock items={aux}></FloatingDock>
             </div>
-          
-            <div className='flex'>
-              <h1 className='text-3xl'>
-                <FlipWords words={["muito", "foda"]} duration={1000}></FlipWords>
-              </h1>
-              
-            </div>
-          
         </BackgroundBeamsWithCollision>
         
     </section>
